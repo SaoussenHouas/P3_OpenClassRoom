@@ -1,0 +1,25 @@
+.footer{
+    background-color: $color-bg-footer;
+    color: $color-txt-white;
+    padding-top: $padding;
+   
+
+    &__list{   
+        padding: $padding;
+        @include tablet{
+            text-align: center;
+        }
+    }
+    &__logo{
+        padding-left: $padding;
+        @include tablet{
+            text-align: center;
+            margin-left: -1.4375rem;
+        }
+    }
+    &__link{
+        color: $color-txt-white;
+        line-height: 1.7;
+    }
+    
+}

@@ -1,0 +1,73 @@
+// Boutons
+
+@mixin btn {
+    font-size: 1rem;
+    color: $color-txt-white;
+    padding: 0.8*$padding;
+    border-radius: 2rem;
+    border: none;
+    background: $color-gradient;
+    box-shadow: $shadow-btn;
+    cursor: pointer;
+    opacity:1;
+    transition: opacity, 200ms,linear;
+    &:hover{
+        box-shadow: $shadow-btn-hover;
+        opacity:0.85;
+    }
+}
+
+// heart
+
+@mixin heart {
+    position:relative;
+    justify-self: end;
+    font-size:1.8rem;
+    &:hover &--bg{
+        transform:scale(0.87);
+        color:transparent;
+        background: $color-gradient;
+        -webkit-background-clip: text;
+    }
+    & .restaurant__icon--bg{
+        position: absolute;
+        text-align: center;
+        font-weight: 600;
+        right:0;
+        color: transparent;
+        font-size: 1.8rem;
+        transform:scale(0);
+        transition: all 100ms linear;
+    }
+}
+
+// Breakpoints media querys
+
+@mixin tablet{
+@media screen and (min-width: map-get($breakpoints, tablet))
+    {
+    @content;
+    }
+}    
+@mixin tablet-Only{
+    @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, pre-desktop))
+    {
+        @content;
+    }
+    
+}
+@mixin mobile-L{
+    @media screen and (min-width: map-get($breakpoints, mobile-L))
+    {
+        @content;
+    }
+        
+}
+
+@mixin desktop{
+@media screen and (min-width: map-get($breakpoints, desktop))
+    {
+    @content;
+    }
+    
+}
